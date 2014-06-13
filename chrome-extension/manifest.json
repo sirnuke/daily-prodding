@@ -7,7 +7,9 @@
 
   "permissions" :
   [
-    "http://www.degrendel.com/"
+    "http://www.degrendel.com/",
+    "http://www.duolingo.com/",
+    "https://github.com/"
   ],
   "browser_action" :
   {
