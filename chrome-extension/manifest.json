@@ -12,10 +12,10 @@
     "https://github.com/"
   ],
   "content_scripts" :
-  {
+  [ {
     "matches" : [ "http://*/*", "https://*/*" ],
     "js" : [ "jquery-2.1.1.min.js" ]
-  },
+  } ],
   "browser_action" :
   {
     "default_icon" : "icon.png",
