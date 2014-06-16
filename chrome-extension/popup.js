@@ -8,7 +8,7 @@ var duolingo = {
 
 //window.onload = function() {
 document.addEventListener('DOMContentLoaded', function() {
-  $.get("http://www.duolingo.com/", function(data) {
+  $.get("https://www.duolingo.com/", function(data) {
     duolingo(data);
   });
 
