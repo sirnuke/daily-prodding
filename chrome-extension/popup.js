@@ -2,15 +2,14 @@
 
 var duolingo = {
   check: function(result) {
-    $("#duolingo") = result;
+    alert(result);
+    $("#duolingo").html("got duolingo!");
   }
 };
 
 //window.onload = function() {
 document.addEventListener('DOMContentLoaded', function() {
-  $.get("https://www.duolingo.com/", function(data) {
-    duolingo(data);
-  });
+  $.get("https://www.duolingo.com/", duolingo.check);
 
   console.log("onload " + Date());
 });
