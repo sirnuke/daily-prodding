@@ -1,12 +1,17 @@
 //
 
 var duolingo = {
-  check: function() {
+  check: function(result) {
+    $("#duolingo") = result;
   }
 };
 
 //window.onload = function() {
 document.addEventListener('DOMContentLoaded', function() {
-  console.log("onload " + Date())
+  $.get("http://www.duolingo.com/", function(data) {
+    duolingo(data);
+  });
+
+  console.log("onload " + Date());
 });
 
