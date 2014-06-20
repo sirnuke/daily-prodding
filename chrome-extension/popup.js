@@ -5,13 +5,13 @@ var duolingo = {
   check: function(result) {
     var check = duolingo.regex.exec(result);
     if (check == null)
-      $("#duolingo").html("Duoling: logged in?");
+      $("#duolingo").text("Duoling: logged in?");
     else if (check[1] == 'true')
-      $("#duolingo").html("Duolingo: Good!");
+      $("#duolingo").text("Duolingo: Good!");
     else if (check[1] == 'false')
-      $("#duolingo").html("Duolingo: Practice today!");
+      $("#duolingo").text("Duolingo: Practice today!");
     else
-      $("#duolingo").html("Duolingo: Unknown value '" + check[1] + "'");
+      $("#duolingo").text("Duolingo: Unknown value '" + check[1] + "'");
   }
 };
 
@@ -27,21 +27,21 @@ var github = {
     if (day < 10)
       result += "0";
     result += day;
-    console.log(result);
     return result;
   },
 
   check: function(result) {
-    //var today = github.today();
+    var today = github.today();
     var last = result.length - 1;
-    //if (result[last][0] != today)
-    //  if it doesn't match, we have a date mismatch of some sort
+    var correctDay = true;
+    if (result[last][0] != today)
+      correctDay = false;
     if (result[last].length != 2 || typeof result[last][1] != "number")
-      $("#github").html("GitHub: Unexpected latest data format");
-    else if (result[last][1] > 0)
-      $("#github").html("GitHub: Good!");
+      $("#github").text("GitHub: Unexpected latest data format");
+    else if (result[last][1] > 0 && correctDay)
+      $("#github").text("GitHub: Good!");
     else
-      $("#github").html("GitHub: Code today!");
+      $("#github").text("GitHub: Code today!");
   }
 };
 
