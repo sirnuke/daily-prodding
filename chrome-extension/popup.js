@@ -20,10 +20,10 @@ var github = {
     var now = new Date(Date.now());
     var month = now.getMonth() + 1;
     var day = now.getDate();
-    var result = now.getFullYear() + "/";
+    var result = now.getFullYear() + "-";
     if (month < 10)
       result += "0";
-    result += month + "/";
+    result += month + "-";
     if (day < 10)
       result += "0";
     result += day;
